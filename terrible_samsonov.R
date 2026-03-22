@@ -1,12 +1,6 @@
-
-
 library(ggplot2)
 
 penguins$sex_icon <- ifelse(penguins$sex == "male", "♂️", "♀️")
-
-
-
-
 
 ggplot(penguins, aes(x = body_mass/1000, y = flipper_len, 
                      color = species,      
@@ -14,7 +8,6 @@ ggplot(penguins, aes(x = body_mass/1000, y = flipper_len,
   geom_text(aes(label = sex_icon), size = 7, alpha = 0.9) +
   coord_polar() +
   
- 
   # ПАЛИТРА ДЛЯ ВИДОВ ПИНГВИНОВ
   scale_color_manual(
     values = c(
@@ -24,13 +17,9 @@ ggplot(penguins, aes(x = body_mass/1000, y = flipper_len,
     )
   ) +
   
-  
-
   theme(
     plot.background = element_rect(fill = "black"),
     panel.background = element_rect(fill = "#CEFF1D"),  
-    
-    
     
     legend.position = "none",
     axis.text = element_blank(),           
@@ -57,7 +46,6 @@ ggplot(penguins, aes(x = body_mass/1000, y = flipper_len,
   annotate("text", x = 2.9, y = 240, label = "Adelie" , size = 11, color = "#FF0040") +
   annotate("text", x = 5.3, y = 240, label = "Gentoo" , size = 11, color = "#00FF41")+
 
-
 annotate("text", x = 4.5, y = 233, 
          label = 
 "Датасет Palmer Penguins представляет морфометрические данные трёх видов
@@ -69,4 +57,4 @@ annotate("text", x = 4.5, y = 233,
 глубоководные спринтеры, Chinstrap — универсалы",
          size = 3.4, color = "magenta", alpha=0.7)
          
-         
+  
